@@ -77,5 +77,14 @@ $ git log --oneline
 
 > 좋은 git commit 메시지를 위한 영어 사전: [LINK](https://blog.ull.im/engineering/2019/03/10/logs-on-git.html)
 
+### 4. 한눈에 확인하기
 
+![image-20201229171129187](md-images/image-20201229171129187.png)
 
+- `git init`으로 모든 변경 정보가 저장될 .git 폴더 생성
+- `git status`로 현재 상태 확인
+- `git add`로 커밋하고자 하는 대상 선정
+- `git commit`으로 선정한 대상 커밋(특정 시점 스냅샷 저장)
+- `git log`를 이용하여 `commit` 이력 확인 
+- `git push origin master`를 이용하여 커밋을 원격 저장소에 전송
+- `git remote -v`로 현재 연결된 원격 저장소 확인
