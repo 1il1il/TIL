@@ -102,6 +102,78 @@ nothing to commit, working tree clean
 
 ![image-20201229141348148](md-images/image-20201229141348148.png)
 
+- 커밋은 변경사항을 기록하기 위한 것
+
+그렇기 때문에 변경 사항이 일어난 폴더를 전부 커밋하는 것이 옳은것 같다
+
+![image-20201229165821560](md-images/image-20201229165821560.png)
+
+practice 폴더에 현 상태
+
+
+
+![image-20201229165851677](md-images/image-20201229165851677.png)
+
+test라는 새로운 폴더를 생성하고 extra.txt를 test 폴더로 이동
+
+
+
+```bash
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    extra.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![image-20201229170412828](md-images/image-20201229170412828.png)
+
+새로운 폴더가 생겼고 extra.txt가 사라진 것을 확인할 수 있다
+
+
+
+```bash
+$ git add test/
+$ git commit -m 'Make test folder'
+[master 351b675] Make test folder
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test/extra.txt
+```
+
+![image-20201229170513350](md-images/image-20201229170513350.png)
+
+이때 test 폴더만 `add`하여 `commit`한 경우 
+
+
+
+```bash
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    extra.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+![image-20201229170529745](md-images/image-20201229170529745.png)
+
+아직 extra.txt의 파일이 지워진 변경 사항이 남아있음을 알 수 있다
+
+즉, test파일에 extra.txt를 넣었지만 extra.txt가 prcatice 폴더에서 사라진 것이 test 폴더만 `add`하여 `commit`한 경우에 반영이 되지 않은 것
+
+따라서 이 경우 prcatice 폴더를 `add`하여 `commit`해야 한번에 모든 변경 사항을 기록할 수 있을 것이다
+
+
+
 
 
 ## 기타 명령어
