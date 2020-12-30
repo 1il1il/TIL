@@ -89,50 +89,57 @@ $ git log --oneline
 - `git push origin master`를 이용하여 커밋을 원격 저장소에 전송
 - `git remote -v`로 현재 연결된 원격 저장소 확인
 
-### 5. 기타
+## 기타
 
-- 원격 저장소 주소 변경
+### 1. 원격 저장소 주소 변경
 
-  예전에 만들어둔 github 계정의 이름을 대충 설정하여 변경함
+- 예전에 만들어둔 github 계정의 이름을 대충 설정하여 변경함
 
-   계정이름 변경후 기존 주소로  `push`를 시도하면 변경된 주소로 리다이렉트 된다
+ 계정이름 변경후 기존 주소로  `push`를 시도하면 변경된 주소로 리다이렉트 된다
 
-  ```bash
-  $ git push origin master
-  Enumerating objects: 5, done.
-  Counting objects: 100% (5/5), done.
-  Delta compression using up to 6 threads
-  Compressing objects: 100% (2/2), done.
-  Writing objects: 100% (3/3), 364 bytes | 364.00 KiB/s, done.
-  Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-  remote: This repository moved. Please use the new location:
-  remote:   https://github.com/UYounghuyn/TIL.git
-  To https://github.com/1il1il/TIL.git
-     e0d250e..8ffb845  master -> master
-  
-  ```
+```bash
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 364 bytes | 364.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/UYounghuyn/TIL.git
+To https://github.com/1il1il/TIL.git
+   e0d250e..8ffb845  master -> master
 
-  ![image-20201229181152631](md-images/image-20201229181152631.png)
+```
 
-  
+![image-20201229181152631](md-images/image-20201229181152631.png)
 
-  하지만 항상 결과창에 리다이렉트됬다고 나올것 같아 연결된 주소를 변경해줌
 
-  ```bash
-  
-  $ git remote -v
-  origin  https://github.com/1il1il/TIL.git (fetch)
-  origin  https://github.com/1il1il/TIL.git (push)
-  
-  $ git remote set-url origin https://github.com/UYounghuyn/TIL.git
-  
-  $ git remote -v
-  origin  https://github.com/UYounghuyn/TIL.git (fetch)
-  origin  https://github.com/UYounghuyn/TIL.git (push)
-  
-  ```
 
-  ![image-20201229180851806](md-images/image-20201229180851806.png)
-  
-  ~~영어 스펠링 틀려서  https://github.com/UYounghyun/TIL.git 으로 다시 한번 바꿈~~
+하지만 항상 결과창에 리다이렉트됬다고 나올것 같아 연결된 주소를 변경해줌
 
+```bash
+
+$ git remote -v
+origin  https://github.com/1il1il/TIL.git (fetch)
+origin  https://github.com/1il1il/TIL.git (push)
+
+$ git remote set-url origin https://github.com/UYounghuyn/TIL.git
+
+$ git remote -v
+origin  https://github.com/UYounghuyn/TIL.git (fetch)
+origin  https://github.com/UYounghuyn/TIL.git (push)
+
+```
+
+![image-20201229180851806](md-images/image-20201229180851806.png)
+
+~~영어 스펠링 틀려서  https://github.com/UYounghyun/TIL.git 으로 다시 한번 바꿈~~
+
+- 변경하는 다른 방법
+
+원격 저장소를 지우고 다시 잡아도 된다
+
+```bash
+$ git remote rm origin
+```

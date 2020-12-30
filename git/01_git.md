@@ -2,7 +2,7 @@
 
 > 분산버전관리시스템(DVCS)
 
-## 0. 로컬 저장소(repository) 설정
+## 로컬 저장소(repository) 설정
 
 - git init(항상 어떤 디렉토리에 있는지 확인하기)
 
@@ -219,3 +219,32 @@ $ git log --oneline -1
 ### `status`명령어의 중요성
 
 - CLI 환경이기 때문에 변경사항을 한눈에 파악하기 힘들다.
+
+## gitignore
+
+- `.gitignore` 파일을 이용하여 변경사항을 무시할 파일 혹은 폴더의 목록을 만들수 있다.
+
+```bash
+# 특정 파일
+data.csv
+
+# 특정 폴더
+images/
+
+# 특정 확장자
+*.png
+
+# 특정 파일만 제외하고 싶을때
+!profile.png
+```
+
+- 메모장에선 한글로 작성시 깨질 가능성이 높으므로 비주얼 스튜디오등을 이용하여 편집하는게 좋다
+
+- 아래 링크는 자신의 개발 환경에 맞는 .gitignore 파일 작성을 도와줄수 있는 내용을 담고있다
+
+  gitignore.io : [링크](https://www.toptal.com/developers/gitignore)
+
+  github/gitignore : [링크](https://github.com/github/gitignore)
+  
+  
+
