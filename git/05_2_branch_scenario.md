@@ -1,4 +1,6 @@
-### 상황 1. fast-foward(혼자 다하기)
+# Branch scenario
+
+### 1. fast-foward(혼자 다하기)
 
 > fast-foward는 feature 브랜치 생성된 이후 master 브랜치에 변경 사항이 없는 상황
 
@@ -94,7 +96,9 @@
 
 ---
 
-### 상황 2. merge commit(보고서/PPT 따로 제작)
+
+
+### 2. merge commit(보고서/PPT 따로 제작)
 
 > 서로 다른 이력(commit)을 병합(merge)하는 과정에서 다른 파일이 수정되어 있는 상황
 >
@@ -237,7 +241,9 @@
 
 ---
 
-### 상황 3. merge commit 충돌(보고서/PPT 함께 제작)
+
+
+### 3. merge commit 충돌(보고서/PPT 함께 제작)
 
 > 서로 다른 이력(commit)을 병합(merge)하는 과정에서 동일 파일이 수정되어 있는 상황
 >
@@ -401,7 +407,7 @@ $ git commit
    |/
    * f3fbd1a Test
    * e157ba9 Make README.md
-    ```
+   ```
    
    
 
@@ -419,6 +425,6 @@ $ git commit
 
 
 
-### 총정리
+### 4. 총정리
 
 ![image-20201230145734249](md-images/image-20201230145734249.png)
