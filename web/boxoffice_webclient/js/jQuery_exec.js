@@ -15,5 +15,10 @@ function my_func() {
     // 1-4. 클래스 선택자 : class속성을 이용해서 선택(Id와 유사하지만 클래스는 유일하지 않다)
     // $('.region').css('color','blue')
     // 1-5. 구조선택자 : 부모, 자식, 형제 관계를 이용해서 선택(ol(=태그 선택자) >(=구조선택자) li(=태그 선택자))
-    $('ol > li').css('color','red')
+    // > : 자식을 지칭 , (공백) :  후손(자손을 포함한 모든것), + : 바로 다음에 나오는 형제(예제에선 div)
+    // ~ : 뒤에 나오는 모든 형제 지칭
+    // $('ol > li').css('color','red')
+    // 1-6. 속성 선택자 : 속성을 이용해서 선택
+    // input[type] input 태그중 type속성을 가진 input을 찾기
+    // $('input[type=button]').disable()
 }
