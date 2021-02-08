@@ -26,6 +26,22 @@ print(result['documents'][0]['thumbnail_url'])
 
 
 
+- [카카오 주소로 좌표 찾기 ](https://developers.kakao.com/docs/latest/ko/local/dev-guide): 입력된 주소에 대한 정보 출력 (좌표 정보도 포함)
+
+```python
+url = 'http://dapi.kakao.com/v2/local/search/address'
+params = {'query': '서울 중랑구 신내동 602-1', 'output_coord': 'WGS84'}
+header = {'Authorization': 'KakaoAK APIKEY'}
+result = requests.get(url, headers = header, params = params).json()
+
+# 리턴받은 데이터중 x, y 좌표를 가져옴 (기본값: WGS84)
+print(result['documents'][0]['address']['x'], result['documents'][0]['address']['y'])
+```
+
+
+
+
+
 - [일일 박스오피스](https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do) : 일자별 일일 박스오피스 검색하기
 
 ```python
@@ -66,6 +82,30 @@ my_dict['매출액'] =sales_list
 df = pd.DataFrame(my_dict)
 display(df)
 ```
+
+
+
+- [동네예보 조회서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057682) : 지역별 날시 예보 가져오기
+
+```python
+import requests
+from urllib.parse import urlparse
+
+# 3시간 단위 예보
+serviceKey = 'serviceKey=KEY'
+dataType = '&dataType=JSON'
+base_date = '&base_date=20210207'
+base_time = '&base_time=0200'
+nx = '&nx=55'
+ny = '&ny=127'
+numOfRows ='&numOfRows=300'
+url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?' + serviceKey + dataType + base_date + base_time + nx + ny + numOfRows
+result = requests.get(urlparse(url).geturl()).json()
+print(result)
+```
+
+
+
 
 
 
