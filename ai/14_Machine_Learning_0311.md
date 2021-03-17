@@ -111,7 +111,7 @@
   - 거리 측정방식
 
     - Euclidean distance
-- Manhattan distance
+    - Manhattan distance
     - Mahalanobis distance
 - 데이터 정규화를 반드시 진행해야한다
 - 1-NN의 오차범위가 이상적인 오차범위의 2배와 같거나 작다 (수학적으로 증명이 되있다 )
