@@ -134,3 +134,8 @@ wk.exceptions.PageError
 
 
 
+- [scikit-image ](https://scikit-image.org/): 일단 HOG하기 위해서 사용해봄
+
+
+
+
