@@ -1,6 +1,6 @@
 # [AI 비전공자를 위한 기초 수학 1 : 선형대수학](https://kaist.edwith.org/mathforai#)
 
-## week 1
+## Week 1
 
 ### 인공지능이란?
 
@@ -47,3 +47,25 @@
   - 2차원: 선, 3차원: 평면, 4차원 이상: Hyperplane
 - 좋은 분류기준?
   - Margin을 최대화하는 기준
+
+## Week 2
+
+### 선형대수학의 쓰임새
+
+- 선형대수학을 인공지능 알고리즘을 만드는데 쓸 수도 있다
+- SVM, Depp Learning 알고리즘에 많이 쓰임
+- 서치 엔진을 만들때 선형대수학이 근간이 된다
+  - SVD(Singular Value Decomposition) 
+
+### 선형대수학의 기초
+
+- 행렬
+- 선형대수학
+  - System of linear algebraic equations
+  - AX = B, UX = C의 해가 같으면 같은 시스템이다
+  - Row Operations
+
+### 선형대수학을 AI에 어떻게 활용하는가 
+
+### 
+
