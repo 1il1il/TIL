@@ -22,3 +22,6 @@
   - Fast development speed, slow execution speed
   - Specialty in data analyses
 
+- Equivalence
+  - ==: Checks the equivalence of two referenced values
+  - is: Checks the equivalence of two referenced objects' IDs

@@ -67,5 +67,19 @@
 
 ### 선형대수학을 AI에 어떻게 활용하는가 
 
-### 
+## Week 3
+
+- Row Operations을 통해 Upper Triangular Matrix를 만들어서 해를 찾을 수 있다
+
+- homogeneous system of linear algebraic equation
+  - 우변이 전부 0인 식
+  - AX = 0 형태
+  - X = 0인 해는 존재하는 상황
+  - 대각 성분이 0이 아니면 유일한 해를 갖는다
+  - 대각 성분이 0이 있다면 해가 없거나 무한한 해를 갖는다
+- Vector Space
+  - R^n: n차원 벡터의 모임
+
+- Linear combination of vectors
+  - u = a1v1 + a2v2 + ... + akvk
 
