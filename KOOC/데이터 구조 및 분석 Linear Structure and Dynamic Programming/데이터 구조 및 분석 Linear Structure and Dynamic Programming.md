@@ -25,3 +25,22 @@
 - Equivalence
   - ==: Checks the equivalence of two referenced values
   - is: Checks the equivalence of two referenced objects' IDs
+
+## Week 2
+
+### object-oriented paradigm and software design
+
+- Good Software Design
+  - Correctness
+  - Robustness
+  - Flexibility
+  - Usability and Reusability
+  - Efficiency
+- Object-Oriented Design
+- Class vs. Instance
+  - 설계도 vs. 실행 결과
+- Unified Modeling Language (UML) 
+- Encapsulation
+- Inheritance
+  - self: reference variable pointing the instance itself
+  - super: reference variable pointing the base class instance

@@ -83,3 +83,17 @@
 - Linear combination of vectors
   - u = a1v1 + a2v2 + ... + akvk
 
+## Week 4
+
+- Linearly independent 
+
+  - 임의의 한 벡터가 다른 벡터들의 합으로 표현되지 않는 경우
+
+  - a1v1 + a2v2 + ... + akvk = 0에서 a1=a2=...=ak=0만이 유일한 해이면 linearly independent 
+
+- Identity matrix
+
+  - 대각 원소가 모두 1이고 나머지 원소는 0인 행렬
+
+- Inverse od a square matrix
+  - 역행렬이 존재한다면 그 역행렬은 유일하다
