@@ -44,3 +44,51 @@
 - Inheritance
   - self: reference variable pointing the instance itself
   - super: reference variable pointing the base class instance
+
+- Polymorphism
+
+  - Method Overriding
+  - Method Overloading
+
+- Abstract Class
+
+  - A class with an abstract method
+  - abstract method: method with signature but with no implementation
+
+- Overriding Methods in object
+
+  - hidden methods
+
+    - ```python
+      __init__
+      __del__
+      __eq__
+      __cmp__
+      __add__
+      ```
+
+  - Duck Typing
+    - Easier to Ask for Forgiveness the Permission(EAFP)
+
+- Generalization
+
+  - is-a relationship
+
+- Association
+  - has-a relationship
+
+  - Multiplicity of Association
+    - 1..*: 1 to Many
+    - *: 0 to Many
+    - 1: Exactly one
+    - 0..1: One or zero
+
+- Aggregation
+
+  - Special has-a relationship
+  - part-whole or part-of relationship
+
+- Dependency
+
+  - use relationship
+

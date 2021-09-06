@@ -69,31 +69,55 @@
 
 ## Week 3
 
-- Row Operations을 통해 Upper Triangular Matrix를 만들어서 해를 찾을 수 있다
+### Row Operations
 
-- homogeneous system of linear algebraic equation
-  - 우변이 전부 0인 식
-  - AX = 0 형태
-  - X = 0인 해는 존재하는 상황
-  - 대각 성분이 0이 아니면 유일한 해를 갖는다
-  - 대각 성분이 0이 있다면 해가 없거나 무한한 해를 갖는다
-- Vector Space
-  - R^n: n차원 벡터의 모임
+- Upper Triangular Matrix를 만들어서 해를 찾을 수 있다
 
-- Linear combination of vectors
-  - u = a1v1 + a2v2 + ... + akvk
+### homogeneous system of linear algebraic equation
+
+- 우변이 전부 0인 식
+- AX = 0 형태
+- X = 0인 해는 존재하는 상황
+- 대각 성분이 0이 아니면 유일한 해를 갖는다
+- 대각 성분이 0이 있다면 해가 없거나 무한한 해를 갖는다
+
+### Vector Space
+
+- R^n: n차원 벡터의 모임
+
+### Linear combination of vectors
+
+- u = a1v1 + a2v2 + ... + akvk
 
 ## Week 4
 
-- Linearly independent 
+### Linearly independent 
 
-  - 임의의 한 벡터가 다른 벡터들의 합으로 표현되지 않는 경우
+- 임의의 한 벡터가 다른 벡터들의 합으로 표현되지 않는 경우
 
-  - a1v1 + a2v2 + ... + akvk = 0에서 a1=a2=...=ak=0만이 유일한 해이면 linearly independent 
+- a1v1 + a2v2 + ... + akvk = 0에서 a1=a2=...=ak=0만이 유일한 해이면 linearly independent 
 
-- Identity matrix
+### Identity matrix
 
-  - 대각 원소가 모두 1이고 나머지 원소는 0인 행렬
+- 대각 원소가 모두 1이고 나머지 원소는 0인 행렬
 
-- Inverse od a square matrix
-  - 역행렬이 존재한다면 그 역행렬은 유일하다
+### Inverse of a square matrix
+
+- 역행렬이 존재한다면 그 역행렬은 유일하다
+
+## Week 5
+
+### Determinant of Square Matrix
+
+- upper triangular matrix를 이용하면 비교적 쉽게 계산 가능
+  - 대각 원소의 곱
+- A를 U로 변환후 판별식 계산
+  - 이때 진행한 row operations에 따라 판별식이 달라짐
+    - i <-> j인 경우 (-1)*det(A)=det(B)
+    - i -> ai + bj인 경우 a*det(A)=det(B)
+
+### Eigenvalue Problem
+
+- characteristic (polynomial) equation of A
+  - det(A-λI) = 0
+- 차원수를 줄일 수 있는 특별한 수
