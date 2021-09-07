@@ -121,3 +121,28 @@
 - characteristic (polynomial) equation of A
   - det(A-λI) = 0
 - 차원수를 줄일 수 있는 특별한 수
+
+## Week 6
+
+### Diagonalisation problem
+
+- A = PDP-1, A는 NxN, P는 NxN 대각 행렬
+
+- NxN 행렬의 고유값이 N개이면 고유벡터는 linearly independent이며 대각화가 가능하다
+- A가 symmetric이면 P를 간단하게 구할 수 있다
+  - A가 symmetric이고 모두 실수이면 실수 고유값을 갖는다. 이때 P-1=PT이므로 A = PDPT
+- 대각화가 되면 A^n을 빠르게 계산할 수 있다
+- A^-1 = PD^-1P^-1
+  - A^-1의 고유값은 D^-1를 보면 알 수 있다
+
+### 인공지능과 선형대수학
+
+- Single Layer ANN
+  - XN = Y > N를 추정
+- Deep Learning
+  - 중간에 여러층이 존재
+  - XN1N2... = Y > N1N2...를 추정
+
+- Support Vector Machine (SVM)
+  - 분류문제에 주로 쓰임
+  - Margin을 최대화 하는 직선을 찾기
