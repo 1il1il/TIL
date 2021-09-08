@@ -154,3 +154,40 @@
   - A variation of a singly linked list
   - Only accesses to the first and lastinstances in the list (FIFO)
 
+## Week 4
+
+### Recursions
+
+- 재귀호출
+- Repeating Problems
+  - 유사한 형태의 좀더 작은 형태로 쪼개기
+- Divide and Conquer
+  - 문제를 잘게 쪼개서 해결해 나가기
+- A programming method to handle the repeating items in a slef-similar way
+  - Calling a function within the function
+- Recursions and Stackframe
+  - Stackframe is a stack storing your function call history
+    - Push: When a function is invoked
+    - Pop: When a fuction hits return or ends
+- Merge sort
+  - Decompose into two smaller lists
+  - Aggregate to one larger and sorted list
+- Problems in recursions
+  - Excessive function calls
+  - These are unnecessarily taking time and space
+    - Dynamic Programming (한번 계산한건 저장하여 사용)
+
+### Dynamic Programming
+
+- Recursions with overlapping sub-instances
+- Memoization
+  - Key technique of dynamic Programming
+    - Storing the results of previous funxtion calls to reuse the results again in the future
+  - More philosophical sense
+    - Bottom-up approach for problem-solving
+      - Recursion: Top-down of divide and conquer
+      - Dynamic programming: Bottom-up of storing and building
+- Fibonacci Sequence in DP
+  - Setting up a memoization table
+- Process of Assembly Line Scheduling
+  - min travel time
