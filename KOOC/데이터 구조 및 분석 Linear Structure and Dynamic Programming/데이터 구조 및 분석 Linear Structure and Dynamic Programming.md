@@ -191,3 +191,22 @@
   - Setting up a memoization table
 - Process of Assembly Line Scheduling
   - min travel time
+
+## Week 5
+
+### Comprehend a problem
+
+- The way to comprehend a given problem
+  - Estimate the putputs of a given input
+  - Estimate the progress of the program in the system
+  - Just as we traced the function calls of the recursion in the excution timeline
+- Since, it is difficult to trace the real-world problems
+  - We create a model that simplifiers the real-world problems
+- Two Types of Models
+  - Models to slove
+    - Linear programming, integer programming
+    - Converting the real world problems into formula
+  - Models to simulate
+    - Event graps, petri-net, agent modeling
+    - Approximating to the real world problems
+
