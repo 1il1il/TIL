@@ -76,3 +76,38 @@
 - D-Separation
   - X is d-separaterd (directly-separaterd) from Z given Y if we connot send a ball from any node in X to any node in Z
 
+### Factorization of Bayesian networks
+
+- conditional Independent를 이용해서 간단하게 정리할 수 있다
+- Plate Notation
+  - X1...Xn을 간단하게 표현
+
+### Inference Question on Bayesian network
+
+- Likelihood
+  - Xh = X - Xv
+  - Xv = Σxh P(Xh, Xv)
+- Conditiomal Probability
+  - Xh = {Y, Z}
+    - Y: interested hidden variables
+    - Z: uninterested hidden variables
+  - P(Y|xv) = Σz P(Y,Z=z|xv) = Σz P(Y,Z,xv)/P(xv) = Σz P(Y, Z, xv) / Σy,z P(Y=y, Z=z,xv)
+- Most probable Assignment
+  - Prediction
+  - Diagnosis
+
+### Marginalization and Elimination
+
+- Marginalization 
+  - P(a,b,mc)=ΣJC ΣE P(a,b,E,JC,mc)=ΣJC P(JC|a) ΣE P(a|b,E)P(E)
+- Elimination
+  - fJ (a)fM (a) = fJM (a)
+  - ΣA fA (a,b,e)fJM (a) = ΣA fAJM (a,b,e)
+
+### Potential Function and Clique Graph
+
+- Potential Function
+  - A function which is not a probability function yet, but once normalized it can be a probability distribution function
+- Absorption in Clique Graph
+
+### Simple Example of Belief Propagation
