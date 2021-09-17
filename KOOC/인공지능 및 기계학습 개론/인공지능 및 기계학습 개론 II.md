@@ -111,3 +111,79 @@
 - Absorption in Clique Graph
 
 ### Simple Example of Belief Propagation
+
+## Week 8
+
+### K-Means Algorithm
+
+- Unsupervised Learning
+
+  - You don't know the true value, and you cannnot provide examples of the ture value. 
+  - Case, such as
+    - Discovering clusters
+    - Discovering latnet factors
+    - Discovering  graph structures
+
+- K-Means Algorithm
+
+  - K개 중심 설정, 거리를 측정해 클러스터 설정
+  - Expectation
+  
+    - Expectation of the log-likelihood given the parameters
+    - Assign the data points to the nearest centroid
+  - Properties of K-Means Algorithm
+
+    -  number of clusters is uncertain
+    - Initial location of centroids
+    - Limitation of distance metrics
+  - Hard clustering
+    - Hard assignment of data points to clusters
+
+### Multinomial Distribution
+
+- A generalization of binomial distribution
+  - Given dataset D with N selections, x1...xn
+- Lagrange Method
+  - Method of finding a local maximum subject to constraints
+
+### Multivariate Gaussian Distribution
+
+- covariance matrix
+- Mixture Model
+
+### Gaussian Mixture Model
+
+- Log likelihood of the entire dataset
+
+### EM(Expectation-Maximization) step for Gaussian Mixture Model
+
+- Expectation of GMM
+  - Expectation: the assignment between the clusters and the data points
+  - Maximization: the update of the parameters
+- Expectation step
+  - Assign a data point to a nearest cluster > the assignment probability
+- Maximization of GMM
+
+### Relation between K-means and GMM
+
+### Fundamentals of the EM Algorithm
+
+- Difference between classification and clustering
+- Probability Decomposition
+  - Jensen's Inequality
+
+### Derivation of EM Algorithm
+
+- Maximizing the Lower Bound
+- Kullback-Leiberdivergence or KL divergence
+  - 임의의 두 분포간의 차이를 알아보는 방법
+  - KL(P||Q) =/= KL(Q||P)
+- EM Algorithm
+  - Finds the maximum likelihood soultions for models with latent variables
+  - P(X|θ) = Σz P(X,Z|θ) > ln P(X|θ) = ln {Σz P(X,Z|θ)}
+  - Initialize θ0 to an arbitrary point
+  - Loop untill the likelihood converges
+    - Expectation step
+    - Maximization step
+  - GMM, K-Means
+    - We need EM algorithm to find the assignment if latene variables and the related distribution parameters
