@@ -1,4 +1,4 @@
-# [인공지능 및 기계학습 개론 II](https://kaist.edwith.org/machinelearning2__17#)
+# [ 인공지능 및 기계학습 개론 II](https://kaist.edwith.org/machinelearning2__17#)
 
 ## Week 7
 
@@ -187,3 +187,121 @@
     - Maximization step
   - GMM, K-Means
     - We need EM algorithm to find the assignment if latene variables and the related distribution parameters
+
+## Week 9
+
+### Concept of Hidden Markov Model
+
+- Observation, x
+  - Can be either discrete or continuous
+  - x1...xT: Observation from time 1 to T
+- Latent stat, z
+  - Vetor variable with K elements
+  - Can be either discrete or continuous
+    - If continuous > Kalman filter
+
+- Hidden Markov Model (HMM)
+  - P(z1) ~ Mult(π1,...,πk)
+  - Transition probabilities
+    - 지금 시각엔 클러스터에 있는데 다음 시각에 어떤 클러스터에 있을지
+    - 첫 클러스터에서 두번째로 갈 확률은? 이동하지 않을 확률은?
+  - Emission probabilities
+    - i번째 클러스터(latent)에 있을때 x(observation)는 어떤 것일까?
+  - A stochastic generative model
+
+### Joint and Marginal Probability of HMM
+
+- Main questions
+  - Evaluation question
+    - Given π, a, b, X
+    - Find P(X|M, π, a, b)
+    - How much is X likely to be observed in the trained model?
+  - Decoding question
+    - Given π, a, b, X
+    - Find argmax z P(Z|X, M, π, a, b)
+    - What would be the most probable sequences of latent states?
+  - Learning question
+    - Given X
+    - Find argmax π, a, b P(X|M, π, a, b)
+    - What would be the underlying parameters of the HMM given the observations?
+  - Decoding questions and Learning questions are very similar to
+    - Supervised and Unsupervised learning
+- Marginal Probability
+  - Eventually, we only want to use X and marginalize Z
+  - Need to avoid a repetitive computing
+
+### Forward-Backward probability Calculation
+
+- Forward probability 
+  - Time 1 > Time T
+  - Limitation
+    - Only takes the input sequence of X before time t
+    - Need to see a probability distribution of a latent variable at time t given the whole X
+- Backward probability
+
+### Viterbi Decoding Algorithm
+
+- Technical difficulties in the implematation
+  - Very frequent underflow problems
+  - Trun this into the log domain > from multiplication to summation
+
+### Baum-Welch Algorithm
+
+- Learning Parameters with Only X
+- Strategy
+  - Finding the optimized π, a, b with X
+  - Finding the most probable Z with X, π, a, b
+  - How to find the unknown parameter of the latent distribution without supervision?
+  - **EM algorithm**
+    - Iteratively optimiziong π, a, b and Z
+- EM for HMM
+  - Initialize π, a, b to an arbitrary point
+  - Loop until the likelihood converges
+- Assign Z and optimize π, a, b alternatively
+  - Coordinated optimization
+
+## Week 10
+
+### Forward Sampling
+
+- Generate a sample from the Bayesian network
+  - Create such sample many times
+  - Then count the samplesmatch the case
+    - P(E=T|MC=T)
+- Forward Sampling in GMM
+  - Sample z from π
+    - z is the indicator of the mixture distributuon
+  - With selected z, sample x from N(μz, Σz)
+
+### Rejection Sampling
+
+- P(E=T|MC=T,A=F)=?
+- Iterate many times
+  - Generate a sample from the Bayesian network
+    - If the sample does not follow MC=T, A=F, reject the sampling procedure and repeat
+- Rejection Sampling frm Numerical View
+  - Distribution that is easy to sample Should be an envelope of p(x) by adjusting M
+
+### Importance Sampling
+
+- Huge waste from the rejection
+- Is generating the PDF the end goal?
+  - NO. Usually, the question follows
+    - Calculating the expectation of PDF
+    - Calculating  a certain probability
+- Let's use the wasted sample to answer the questions
+- Likelihood Weighting Algorithm
+  - P(E=T|MC=T,A=F)=?
+  - LikelihoodWeighting
+    - SumSW=NormSW=0
+      - Iterate many times
+        - SW=SampleWeight=1
+        - Generate a sample from the Bayesian network
+          - P(A=F|B=F,E=F)=0.999
+          - SW=1*0.999
+          - P(MC=T|A=F)=0.01
+          - SW=1x0.999x0.01
+        - If the sample has E=T, then SumSW+=SW
+        - NormSW+=SW
+      - Return SumSW / NormSW
+
