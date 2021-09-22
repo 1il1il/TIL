@@ -305,3 +305,55 @@
         - NormSW+=SW
       - Return SumSW / NormSW
 
+### Markov Chain
+
+- Each node has a probability distribution of states
+  - This node hsa a vector of state probability distribution
+- Each link suggests a probabilistic state transition
+  - The link has a matrix of state transition probability distribution 
+- Properties of Markov Chain
+  - Accessible
+    - i > j: State j is qccessible from i
+    - i <-> j: State i and j communicate
+  - Reducibility
+    - A Markov chain is irreducible if i <->, i, j가 모든 S에 포함
+    - irreducible: 지속적으로 이동이 가능하다
+  - Periodicity
+    - State i has period d
+    - 주기적으로 등장, (4,8,12에 등장하면 d=4)
+    - If d=1. State i is aperodic
+  - Transience
+    - 다시 일어날 수 없다
+    - State j is recurrent: 다시 일어날 수 있다
+    - States which are not recurrent are transtent
+  - Ergodicity
+    -  A state is ergodic if the state is (positive) recurrent and aperodic
+    - Markov chain is ergodic  if all states are ergodic
+- Stationary Distribution
+  - RTi: 특정 시각에 방문하고 다시 방문하기까지의 시간
+  - Limit theorem of Markov chain
+    - If a Markov chain is irreducible and ergodic
+    - πT = T
+  - Reversible MC
+    - Detailed Balance, or Balance Equation
+    - πiTi,j = πjTj,i
+
+### Markov Chain for Sampling
+
+- Assigning Z values is a key in the inference
+- Markov chain Monte Carlo (MCMC)
+  - Algorithms for sampling from probability distributions
+
+### Metropolis-Hastings Algorithm
+
+- General algorithm of MCMC
+  - With an acceptance probability
+    - Accept: zt+1 = z\*
+    - Reject: zt+1 = zt
+- r(z\*|zt) = q(zt|z\*)p(z\*)/q(z\*|zt)p(zt), we want this to be 1
+  - If r(z\*|zt) < 1
+    - z\* > zt, zt >>>> z\*인 상태
+    - \*에서 t로 가는 것을 늘리거나 t에서 \*로 가는 것을 줄이거나
+- Random Walk M-H Algorithm
+  - σ^2: 이동하는 거리
+
