@@ -357,3 +357,39 @@
 - Random Walk M-H Algorithm
   - σ^2: 이동하는 거리
 
+### Gibbs Sampling
+
+- A special case if M-H algorithm
+- Concept of Gibbs Sampling
+  - Each step involves replacing the value of one of the variables by a value drawn from the distribution of taht variable conditioned on the values of the remaining variables
+
+### Understand the LDA(Latent Dirichlet Allocation)
+
+- Topic Modeling
+  - Topics
+  - The proportion of topics
+  - The mosr probable words in topics
+- Text analysis without reading the whole corpus
+- Latent Dirichlet Allocation
+  - Soft clustering in text data
+  - Has the structure of text corpus
+  - Is a bayesian model with priors
+- Finding Topic Assignment Per Topic
+  - Generative Prosess
+
+### Gibbs Sampling for LDA
+
+- Finding the most likely assignment on Z > Gibbs Sampling
+- LDA Model Parameter Inference Routine with Gibbs
+  - LDA(TextCorpus T, α, β)
+    - Randomly, initialize assignment on T
+    - Count ni j,r with the initial Z assignment
+    - While performance measure (i.e. perplexity) converges
+      - For m =1 to T's document number
+        - For l = 1 to Tm's document word length
+    - Calculate the most likely estimation on θ and p
+    - Return θ and p
+- Note
+  - θ represents the document-topic probability
+  - p represents the topic-word probability
+  - Perplexity is the measurement on the quality of the soft-clustreing, and calculating it may take some many case, we just set the iteration number
