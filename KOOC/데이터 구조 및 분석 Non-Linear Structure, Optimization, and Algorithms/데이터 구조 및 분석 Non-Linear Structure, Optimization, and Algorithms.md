@@ -358,3 +358,168 @@
   - D = the digit number of the largest value
   - N = the size of the sequence
 
+## Week 4
+
+### Limit of Divide and Conquer
+
+- If the divide and conquer is based upon a comparison
+  - The efficiency is limited to the logarithm of the problem size
+    - Search: O(N) > O(logN)
+    - Sorting: O(N^2) > O(NlogN)
+- Cheap storage cost and expensive time cost
+  - Searching and sorting without comparisons
+    - Because time is gold
+    - With cheap storage spaces, memory and disk
+
+### Hash Table
+
+- A large size of tables consisting og keys and values
+  - Hash function is used to find an array indexk for a key
+  - Difinition
+    - An array index: an index in the table
+    - A key: a unique identifier of a value, a parameter to find its array index through hash functions
+    - A value: a stored value
+  - Characteristic
+    - One key can be associated with one index
+    - One index can be associated with multiple keys
+      - f(1) = a, f(2) = a ...
+  - An array element = a slot = A bucket
+
+### Hash Function
+
+- Hash function is used to convert
+  - Value's key > Array's key
+  - Ex) f(8011171234567) = 3
+    - 8011171234567 = a person's register number
+    - 3 = an index where the person is stored
+    - f = a hash function
+- Perfect hash function
+  - Either, if we have an unlimited space
+  - Or, if we ha a limited input size
+  - We might have a chance to create a **bijective hash function**
+    - However, you have to know the characteristic of keys
+- Good hash funtion
+  - Hash function resulting in a **uniform distribution**
+    - Why is this a good hash funtion?
+      - Decrease collision
+    - Why is this difficult?
+    - Pseudo-random
+    - Any relation to the password encryption algorithm?
+  - Low cost, determinism, variable range
+
+### Examples of Hash Function
+
+- Modulo based hash function
+  - We divide a numeric key with a number
+    - Often, a number = the size of the hash table
+  - We take the remainder as an array index
+  - For example
+    - Index = key mod size
+    - 34567 = 8011171234567 mod 5000
+    - but, 34567 = 8011171284567 mod 5000
+  - Pros and Cons
+    - Pros: Low cost, range
+    - Cons: value의 일부분만 사용
+- Square based hash function
+  - Or, mid-square hash function
+  - The problem of the modulo operation
+    - Under-utilizing avable information
+    - Quotient is not used...
+  - Therefore, we perform a mid-square method
+    - First, square the key value
+    - Second, take the N digits in the middle
+    - Third, apply the selected digits to the modulo operation
+  - For example,
+    - Key = 123, Table size = 100, Mid-square digits = 3
+    - f(123) = MidSquare(123) mode 100 = 512 mod 100 = 12
+      - 123 * 123 = 1**512**9
+  - Still utilizing the modulo operation at the end
+- Digit analysis based hash funtion
+  - Digit analysis
+    - A.K.A. checksum hash funtion
+    - Looks pertty stupid way
+    - But works pretty well
+  - Procedure of the function calculation
+    - One checksum method
+      - First, take all the digits and sum of them
+      - Second. apply the modulo operation to the summation of the digits
+    - For example,
+      - Key = 8011171234567, Table size = 100
+      - f(8011171234567) = (8+0+1+1+1+7+1+2+3+4+5+6+7) mod 100 = 46
+
+### Collision Resolution of Hashing
+
+- Load factor
+  - Load factor is often the determinant of the hash performance
+  - = N / S
+    - N = Size of the stored entries
+    - S = Size of the hash table
+  - Why is this important?
+    - Related to one of the qualities of the hash function, or uniformity
+    - Because of collision
+      - Different keys with the smae index
+- Closed addressing
+- Open addressing
+- **Collision resolution by closed addressing**
+  - Scparate chaining
+  - Live together approach
+- The worst case scenario
+  - Every enties have the same index from a stupid hash function
+  - Just another linked list
+- Considering the load factor
+  - Load factor > 1 is possible
+  - This case means that every index has one or more entries
+  - Then? Only use the linked list for each bucket? Trees can be used as well...
+- **Collision resolution by Open addressing**
+  - Resolution by probing
+    - See where an empty bucket is
+  - *I don't want to live with you, so get out and find your own plac*e approach
+- Various probing
+  - Linear probing - see whether the next bucket is empty or not
+    - Index = (f(Key) + i) mod S
+  - Quadratic probing - go to a bucket far away
+    - Index = (f(key) + i + i^2) mod S
+  - i = number of trials
+  - S = size of the hash table
+- Why quadratic probing
+  - Uniformity of hash function
+  - Because of a **cluster**
+
+### Deletion in Hash Table
+
+- Deletion
+  - Closed addresing
+    - Simple
+    - Go to the bucket, and follow the linked list, and delete it
+  - Open addressing
+    - Complicated
+    - intuitively...
+      - Visti the index from the hash fuction
+      - If it is there delete it
+      - If not, keep following the probing method, find and delete it
+    - What is wrong with this idea?
+    - Problem scenario?
+      - Insert an 1, 6, 11 with the same index from hash functions, resolved by linear probing (size = 5)
+      - Deleting 6
+      - And, searching 11 < Problem
+        - 6자리에 11이 있어야 하는데 없음
+- Then, 
+  - Lazy deletion
+  - You just mark it and do not delete it
+  - Keep adding entries and no deletion
+    - Why? Cheap storage cost
+  - But, always there is a limit
+
+### Managing the Size of Hash Table
+
+- There is always a limit
+  - Even though the storage is cheap
+  - You don't have an infinite storage
+- If you don't delete entries
+- Keep adding more entries
+- Then, the table's load factor becomes higher
+  - More probing to insert
+- Hence, Sometimes
+  - You need to extand the storage space
+    - Re-hashing
+  - And insert the enries to the new space with more buckets
